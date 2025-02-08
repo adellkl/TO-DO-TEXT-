@@ -1,24 +1,19 @@
-window.onload = function() {
+window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const uniqueId = urlParams.get('id');
-    const text = localStorage.getItem(uniqueId);
+    let text = localStorage.getItem(`permanent_${uniqueId}`);
 
-    if (text) {
-        document.getElementById('displayText').innerText = text;
-        const shareableLink = `${window.location.origin}/result.html?id=${uniqueId}`;
-        const linkElement = document.getElementById('shareableLink');
-        linkElement.href = shareableLink;
-        linkElement.innerText = shareableLink;
-    } else {
-        document.getElementById('displayText').innerText = "Texte non trouvé.";
+    if (!text) {
+        document.getElementById('displayText').innerText = "Ce message n'existe pas.";
+        return;
     }
 
-    const copyButton = document.getElementById('copyButton');
-    copyButton.addEventListener('click', function() {
-        const link = document.getElementById('shareableLink').href;
-        navigator.clipboard.writeText(link).then(function() {
+    document.getElementById('displayText').innerText = text;
+
+    document.getElementById('copyButton').addEventListener('click', function () {
+        navigator.clipboard.writeText(window.location.href).then(() => {
             alert('Lien copié dans le presse-papiers.');
-        }, function() {
+        }).catch(() => {
             alert('Échec de la copie du lien.');
         });
     });

@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultat TEXT</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> 
-</head>
-<body>
-    <div class="container">
-        <h1><a href="index.html">HOME</a></h1>
-        <p class="display" id="displayText"></p>
-        <p>Lien partageable :</p>
-        <div id="linkContainer">
-            <a id="shareableLink" href="#" target="_blank"></a>
-            <button id="copyButton"><i class="fas fa-copy"></i></button>
-        </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Visualisez un message anonyme reçu avec un lien unique."
+    />
+    <meta
+      name="keywords"
+      content="message anonyme, lire message, partage secret, message privé"
+    />
+    <meta name="author" content="AnonymeApp" />
+    <title>Message Anonyme</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="backButton" onclick="window.location.href='index.html'">
+      ⬅ Retour
+    </button>
+    <p id="displayText">Chargement...</p>
+    <button id="copyButton">Copier le lien</button>
     <script src="result.js"></script>
-</body>
+  </body>
 </html>
