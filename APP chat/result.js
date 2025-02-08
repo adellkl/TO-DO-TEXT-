@@ -13,8 +13,6 @@ window.onload = function () {
     document.getElementById('copyButton').addEventListener('click', function () {
         navigator.clipboard.writeText(window.location.href).then(() => {
             alert('Lien copié dans le presse-papiers.');
-        }).catch(() => {
-            alert('Échec de la copie du lien.');
         });
     });
 };
